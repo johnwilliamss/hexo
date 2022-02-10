@@ -1,0 +1,228 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Hexo | Hexo</title><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="一周Linux学习笔记tips1：linux不靠扩展名区分文件类型，方便使用而使用一些文件的扩展名。  Linux各目录的作用    不要在服务器访问高峰运行高负载命令：大数据量压缩，全盘扫描等。 文件处理命令及日期命令ls -[选项] &#x2F;[参数] ls -a (–all) ls -la 长信息显示 ls -lh 文件大小显示（通用命令） ls -ld 查看目录本身，而不是目录下的文件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2022/02/10/%E4%B8%80%E5%91%A8Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一周Linux学习笔记tips1：linux不靠扩展名区分文件类型，方便使用而使用一些文件的扩展名。  Linux各目录的作用    不要在服务器访问高峰运行高负载命令：大数据量压缩，全盘扫描等。 文件处理命令及日期命令ls -[选项] &#x2F;[参数] ls -a (–all) ls -la 长信息显示 ls -lh 文件大小显示（通用命令） ls -ld 查看目录本身，而不是目录下的文件">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+<meta property="article:published_time" content="2022-02-10T03:53:54.735Z">
+<meta property="article:modified_time" content="2022-01-12T12:38:12.030Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/02/10/%E4%B8%80%E5%91%A8Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Hexo',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-01-12 20:38:12'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.0.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">2</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Hexo</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">No title</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-02-10T03:53:54.735Z" title="Created 2022-02-10 11:53:54">2022-02-10</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-01-12T12:38:12.030Z" title="Updated 2022-01-12 20:38:12">2022-01-12</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="一周Linux学习笔记"><a href="#一周Linux学习笔记" class="headerlink" title="一周Linux学习笔记"></a><strong>一周Linux学习笔记</strong></h1><p><strong>tips1</strong>：linux不靠扩展名区分文件类型，方便使用而使用一些文件的扩展名。</p>
+<p><img src="C:\Users\86184\AppData\Roaming\Typora\typora-user-images\image-20220110102356722.png" alt="image-20220110102356722"></p>
+<p>Linux各目录的作用</p>
+<p><img src="C:\Users\86184\AppData\Roaming\Typora\typora-user-images\image-20220110112033087.png"></p>
+<p><img src="C:\Users\86184\AppData\Roaming\Typora\typora-user-images\image-20220110112118984.png" alt="image-20220110112118984"></p>
+<p><img src="C:\Users\86184\AppData\Roaming\Typora\typora-user-images\image-20220110112155738.png" alt="image-20220110112155738"></p>
+<p>不要在服务器访问高峰运行高负载命令：大数据量压缩，全盘扫描等。</p>
+<h2 id="文件处理命令及日期命令"><a href="#文件处理命令及日期命令" class="headerlink" title="文件处理命令及日期命令"></a>文件处理命令及日期命令</h2><p>ls -[选项] &#x2F;[参数]</p>
+<p>ls -a (–all)</p>
+<p>ls -la 长信息显示</p>
+<p>ls -lh 文件大小显示（通用命令）</p>
+<p>ls -ld 查看目录本身，而不是目录下的文件</p>
+<p>ls -i 查看文件或者目录的i节点</p>
+<h2 id="目录处理命令：mkdir"><a href="#目录处理命令：mkdir" class="headerlink" title="目录处理命令：mkdir"></a>目录处理命令：mkdir</h2><p><img src="C:\Users\86184\AppData\Roaming\Typora\typora-user-images\image-20220110180842848.png" alt="image-20220110180842848"></p>
+<p>cd</p>
+<p><strong><img src="C:\Users\86184\AppData\Roaming\Typora\typora-user-images\image-20220110180953757.png" alt="image-20220110180953757"></strong></p>
+<p>rmdir</p>
+<p><img src="C:\Users\86184\AppData\Roaming\Typora\typora-user-images\image-20220110181338343.png" alt="image-20220110181338343"></p>
+<p>pwd 返回当前目录</p>
+<p>cp</p>
+<p><img src="C:\Users\86184\AppData\Roaming\Typora\typora-user-images\image-20220110181513406.png" alt="image-20220110181513406"></p>
+<p>强制覆盖不提示的方法 ： \cp </p>
+<p>rm</p>
+<p><img src="C:\Users\86184\AppData\Roaming\Typora\typora-user-images\image-20220110184232064.png" alt="image-20220110184232064"></p>
+<p>rm -rf 优化系统内存！！！</p>
+<p>mv</p>
+<p><img src="C:\Users\86184\AppData\Roaming\Typora\typora-user-images\image-20220110184555243.png" alt="image-20220110184555243"></p>
+<p>mv pig.txt &#x2F;root&#x2F;cow&#x2F;txt 移动并且重命名</p>
+<p>cat</p>
+<p><img src="C:\Users\86184\AppData\Roaming\Typora\typora-user-images\image-20220110185104819.png" alt="image-20220110185104819"></p>
+<p>查看下一行按enter 查看下一页按空格</p>
+<p>more</p>
+<p><img src="C:\Users\86184\AppData\Roaming\Typora\typora-user-images\image-20220110185608667.png" alt="image-20220110185608667"></p>
+<p>less</p>
+<p><img src="C:\Users\86184\AppData\Roaming\Typora\typora-user-images\image-20220110185836440.png" alt="image-20220110185836440"></p>
+<p>echo和head</p>
+<p><img src="C:\Users\86184\AppData\Roaming\Typora\typora-user-images\image-20220112171207946.png" alt="image-20220112171207946"></p>
+<p>tail</p>
+<p><img src="C:\Users\86184\AppData\Roaming\Typora\typora-user-images\image-20220112171714747.png" alt="image-20220112171714747"></p>
+<p>“&gt;”和 “”&gt;&gt;”</p>
+<p><img src="C:\Users\86184\AppData\Roaming\Typora\typora-user-images\image-20220112172234583.png" alt="image-20220112172234583"></p>
+<p>ln</p>
+<p><img src="C:\Users\86184\AppData\Roaming\Typora\typora-user-images\image-20220112173238323.png" alt="image-20220112173238323"></p>
+<p>history</p>
+<p><img src="C:\Users\86184\AppData\Roaming\Typora\typora-user-images\image-20220112174722835.png"></p>
+<p>date</p>
+<p><img src="C:\Users\86184\AppData\Roaming\Typora\typora-user-images\image-20220112183708488.png" alt="image-20220112183708488"></p>
+<p><img src="C:\Users\86184\AppData\Roaming\Typora\typora-user-images\image-20220112183924967.png" alt="image-20220112183924967"></p>
+<p>vi&#x2F;vim快捷键</p>
+<p><strong><img src="C:\Users\86184\AppData\Roaming\Typora\typora-user-images\image-20220112184947209.png" alt="image-20220112184947209"></strong></p>
+<p>关机和重启</p>
+<p><img src="C:\Users\86184\AppData\Roaming\Typora\typora-user-images\image-20220112185131829.png" alt="image-20220112185131829"></p>
+<h2 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h2><p><img src="C:\Users\86184\AppData\Roaming\Typora\typora-user-images\image-20220112190032425.png" alt="image-20220112190032425"></p>
+<p><img src="C:\Users\86184\AppData\Roaming\Typora\typora-user-images\image-20220112190108197.png" alt="image-20220112190108197"></p>
+<p>删除用户</p>
+<p><img src="C:\Users\86184\AppData\Roaming\Typora\typora-user-images\image-20220112190643820.png" alt="image-20220112190643820"></p>
+<p>查询用户信息</p>
+<p>id 用户名</p>
+<p>切换用户</p>
+<p>su - 用户名</p>
+<p>whoami    who am I</p>
+<p><strong>用户组</strong></p>
+<p><img src="C:\Users\86184\AppData\Roaming\Typora\typora-user-images\image-20220112191744814.png" alt="image-20220112191744814"></p>
+<p>修改用户的组</p>
+<p>usermod -g 用户组 用户名</p>
+<h4 id="用户和组相关的文件"><a href="#用户和组相关的文件" class="headerlink" title="用户和组相关的文件"></a>用户和组相关的文件</h4><p><img src="C:\Users\86184\AppData\Roaming\Typora\typora-user-images\image-20220112192019679.png" alt="image-20220112192019679"></p>
+<h4 id="运行级别"><a href="#运行级别" class="headerlink" title="运行级别"></a>运行级别</h4><p><img src="C:\Users\86184\AppData\Roaming\Typora\typora-user-images\image-20220112193309221.png" alt="image-20220112193309221"></p>
+<p>查看当前运行级别</p>
+<p>syetemctl get-default</p>
+<p>切换运行级别</p>
+<p>syetemctl set-default </p>
+<p><strong>tips2如何找回root密码</strong></p>
+<p>1 首先在开机界面输入e</p>
+<p>出现这个界面</p>
+<p><img src="C:\Users\86184\AppData\Roaming\Typora\typora-user-images\image-20220112195016664.png" alt="image-20220112195016664"></p>
+<p>方向键往下移动，找到以linux16开头的行</p>
+<p><img src="C:\Users\86184\AppData\Roaming\Typora\typora-user-images\image-20220112195131547.png" alt="image-20220112195131547"></p>
+<p>2 在LANG&#x3D;zh_CN.UTF-8后输入: init&#x3D;&#x2F;bin&#x2F;sh</p>
+<p>3 然后按ctrl + x 进入单用户模式</p>
+<p>4 接着在光标闪烁的位置输入： mount -o remount,rw &#x2F; （注意，各个单词之间有空格）完成后按回车键</p>
+<p>5 在新的一行输入： passwd</p>
+<p>输入两次输入密码</p>
+<p>6 接着在光标闪烁的位置输入： touch &#x2F;.autorelabel （注意，touch与后面的&#x2F;有一个空格）完成后按回车键</p>
+<p>7 继续在光标闪烁的地方输入： exec &#x2F;sbin&#x2F;init （注意，exec与后面的&#x2F;有一个空格） 完成后按键盘的回车键等在系统自动修改密码，这个过程会有点长，请耐心等待，完成后系统会自动重启，新的密码生效了。</p>
+<h2 id="搜索和解压"><a href="#搜索和解压" class="headerlink" title="搜索和解压"></a>搜索和解压</h2></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">John Doe</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://example.com/2022/02/10/%E4%B8%80%E5%91%A8Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">http://example.com/2022/02/10/%E4%B8%80%E5%91%A8Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/02/10/hello-world/"><img class="next-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">Hello World</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">John Doe</div><div class="author-info__description"></div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">2</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E5%91%A8Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="toc-number">1.</span> <span class="toc-text">一周Linux学习笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86%E5%91%BD%E4%BB%A4%E5%8F%8A%E6%97%A5%E6%9C%9F%E5%91%BD%E4%BB%A4"><span class="toc-number">1.1.</span> <span class="toc-text">文件处理命令及日期命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95%E5%A4%84%E7%90%86%E5%91%BD%E4%BB%A4%EF%BC%9Amkdir"><span class="toc-number">1.2.</span> <span class="toc-text">目录处理命令：mkdir</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86"><span class="toc-number">1.3.</span> <span class="toc-text">用户管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E5%92%8C%E7%BB%84%E7%9B%B8%E5%85%B3%E7%9A%84%E6%96%87%E4%BB%B6"><span class="toc-number">1.3.0.1.</span> <span class="toc-text">用户和组相关的文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E7%BA%A7%E5%88%AB"><span class="toc-number">1.3.0.2.</span> <span class="toc-text">运行级别</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%90%9C%E7%B4%A2%E5%92%8C%E8%A7%A3%E5%8E%8B"><span class="toc-number">1.4.</span> <span class="toc-text">搜索和解压</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/02/10/%E4%B8%80%E5%91%A8Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="No title"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"/></a><div class="content"><a class="title" href="/2022/02/10/%E4%B8%80%E5%91%A8Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="No title">No title</a><time datetime="2022-02-10T03:53:54.735Z" title="Created 2022-02-10 11:53:54">2022-02-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/02/10/hello-world/" title="Hello World"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/2022/02/10/hello-world/" title="Hello World">Hello World</a><time datetime="2022-02-09T16:03:09.040Z" title="Created 2022-02-10 00:03:09">2022-02-10</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By John Doe</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
